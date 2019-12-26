@@ -25,6 +25,7 @@ jobs:
         run: |
           git config --global user.email "miyauchi@qualitia.co.jp"
           git config --global user.name "miyauchi"
+          git remote set-url origin https://miyauci:${GITHUB_TOKEN}@github.com/miyauci/param.git
           git clone https://miyauci:${{ secrets.GITHUB_TOKEN }}@github.com/miyauci/param.git
           cd param
           touch tes
