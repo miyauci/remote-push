@@ -23,7 +23,11 @@ jobs:
 
       - name: clone
         run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git submodule add https://github.com/miyauci/param.git param
+          ls
+          pwd
           cd param
           touch tes
           git add .
