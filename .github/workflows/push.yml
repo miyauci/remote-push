@@ -8,6 +8,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: pwd
+        run: pwd
       - name: test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
