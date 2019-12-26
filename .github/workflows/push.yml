@@ -24,7 +24,7 @@ jobs:
       - name: clone
         run: |
           git config --global user.email "miyauchi@qualitia.co.jp"
-          git config --global user.name "miyauci"
+          git config --global user.name "miyauchi"
           git submodule add https://github.com/miyauci/param.git param
 
           cd param
