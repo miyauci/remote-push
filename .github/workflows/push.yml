@@ -26,13 +26,13 @@ jobs:
           git config --global user.email "miyauchi@qualitia.co.jp"
           git config --global user.name "miyauci"
           git submodule add https://github.com/miyauci/param.git param
-          ls
-          pwd
+
           cd param
           touch tes
           git add .
           git commit -m "Add changes" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git push origin HEAD
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
