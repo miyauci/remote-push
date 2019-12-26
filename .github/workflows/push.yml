@@ -1,4 +1,4 @@
-name: remote push test
+name: test
 
 on: [push]
 
@@ -7,10 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: git clone
-        run: git clone ${{ secrets.GITHUB_TOKEN }}@github.com:miyauci/param.git
       - uses: actions/checkout@v2
-      # - name: push test
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: ./test.sh
+      - name: test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./test.sh
