@@ -1,0 +1,16 @@
+name: remote push test
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: git clone
+        run: git clone
+      - uses: actions/checkout@v2
+      # - name: push test
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: ./test.sh
