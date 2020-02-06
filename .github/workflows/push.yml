@@ -21,17 +21,22 @@ jobs:
       #   with:
       #     github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: clone
+      - name: test
+        env:
+          hello: 1234
         run: |
-          git config --global user.email "miyauchi@qualitia.co.jp"
-          git config --global user.name "miyauchi"
-          git remote set-url origin https://miyauci:${{secrets.GITHUB_TOKEN}}@github.com/miyauci/param.git
-          git clone https://miyauci:${{ secrets.GITHUB_TOKEN }}@github.com/miyauci/param.git
-          cd param
-          touch tes
-          git add .
-          git commit -m "Add changes" -a
-          git push
+          echo ${hello}
+      # - name: clone
+      #   run: |
+      #     git config --global user.email "miyauchi@qualitia.co.jp"
+      #     git config --global user.name "miyauchi"
+      #     git remote set-url origin https://miyauci:${{secrets.GITHUB_TOKEN}}@github.com/miyauci/param.git
+      #     git clone https://miyauci:${{ secrets.GITHUB_TOKEN }}@github.com/miyauci/param.git
+      #     cd param
+      #     touch tes
+      #     git add .
+      #     git commit -m "Add changes" -a
+      #     git push
       # - name: Push changes
       #   uses: ad-m/github-push-action@master
       #   with:
